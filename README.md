@@ -19,8 +19,9 @@ npm i @beaubus/single-file-upload-for-vue
 ```
 
 ## Usage
+Wrap component with <div> as it takes all the space:
 ```html
-<div>
+<div style="width:120px;height:120px">
     <single-file-upload-for-vue :headers="{'Accept': 'application/json'}"
                                 :loaded="{url: 'https://full-url-to-your-file.pdf', size: 56}"
                                 store_url="/relative-url-to-backend-store"
