@@ -1,5 +1,13 @@
 # Simple single file upload with Drag'n'Drop for Vue2
 
+<a href="https://www.npmjs.com/package/@beaubus/single-file-upload-for-vue">
+    <img src="https://img.shields.io/npm/dt/@beaubus/single-file-upload-for-vue?logo=npm" alt="npm downnloads count">
+</a>
+
+<a href="https://github.com/beaubus/single-file-upload-for-vue/blob/master/LICENSE">
+    <img alt="MIT" src="https://img.shields.io/github/license/beaubus/single-file-upload-for-vue">
+</a>
+&nbsp;&nbsp;
 <a href="https://twitter.com/intent/follow?screen_name=daily_web_dev">
     <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/daily_web_dev?style=social">
 </a>
