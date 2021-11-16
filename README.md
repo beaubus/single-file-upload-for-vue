@@ -21,9 +21,14 @@ Modern upload input with Drag'n'Drop support, based on the Fetch Api (POST and D
 
 ## Installation
 
-Install the plugin from npm
+NPM
 ```bash
 npm i @beaubus/single-file-upload-for-vue
+```
+
+CDN
+```bash
+<script src="https://unpkg.com/@beaubus/single-file-upload-for-vue/dist/single-file-upload-for-vue.min.js"></script>
 ```
 
 ## Usage
@@ -39,4 +44,3 @@ Wrap component with `<div>` as it takes all the space:
     ></single-file-upload-for-vue>
 </div>
 ```
-

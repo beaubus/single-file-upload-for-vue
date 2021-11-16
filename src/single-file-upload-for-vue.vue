@@ -199,6 +199,10 @@ export default {
         text-align: left;
     }
 
+    .single-file-upload-for-vue .file >p:nth-of-type(1) > a {
+        white-space: nowrap;
+    }
+
     .single-file-upload-for-vue .file >p:nth-of-type(3) {
         text-align: center;
         padding-top: .5rem;
