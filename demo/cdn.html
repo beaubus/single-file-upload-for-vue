@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <title>single-file-upload-for-vue demo</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <script src="https://www.unpkg.com/single-file-upload-for-vue/dist/single-file-upload-for-vue.min.js"></script>
-
+    <script src="https://unpkg.com/@beaubus/single-file-upload-for-vue/dist/single-file-upload-for-vue.min.js"></script>
 </head>
 <body>
 
 <div id="app">
-
     <div style="width:120px;height:120px">
         <single-file-upload-for-vue :headers="{'Accept': 'application/json'}"
                                     :loaded="{url: 'https://full-url-to-your-file.pdf', size: 56}"
@@ -22,9 +20,10 @@
 </div>
 
 <script>
-    let app = {
+    var app = new Vue({
+        el: '#app',
         components: {
-            'single-file-upload-for-vue': SimpleTagsForVue
+            'single-file-upload-for-vue': SingleFileUploadForVue
         },
         methods: {
             uploadComplete(data)
@@ -32,7 +31,7 @@
                 console.log(data)
             }
         }
-    }
+    })
 </script>
 
 </body>
