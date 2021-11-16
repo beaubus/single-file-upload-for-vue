@@ -32,6 +32,14 @@ CDN
 ```
 
 ## Usage
+```js
+import single_file_upload_for_vue from '@beaubus/single-file-upload-for-vue';
+
+components: {
+    'single-file-upload-for-vue': single_file_upload_for_vue
+}
+```
+
 Wrap component with `<div>` as it takes all the space:
 ```html
 <div style="width:120px;height:120px">
