@@ -68,14 +68,13 @@ div > .single-file-upload-for-vue {
 ```
 
 ## Properties
-
-| Name         | Type    | Default     | Description                                        
-| ---          | ---     | ---         | ---                                                
-| name         | String  | 'file_input'| Name of the file input
-| store_url    | String  |             | url for the POST request                                
-| destroy_url  | String  |             | url for the DELETE request (file name would be appended to the end)
-| headers      | Object  |             | Request headers
-| loaded       | Object  |             | Absolute link to the loaded file (url) and size in bytes (size) 
+| Name         | Type    | Default        | Description                                        
+| ---          | ---     | ---            | ---                                                
+| name         | String  | 'file_input'   | Name of the file input
+| store_url    | String  | '/store-url'   | url for the POST request                                
+| destroy_url  | String  | '/destroy-url' | url for the DELETE request (file name would be appended to the end)
+| headers      | Object  |                | Request headers
+| loaded       | Object  |                | Absolute link to the loaded file (url) and size in bytes (size) 
 
 
 ## Emits

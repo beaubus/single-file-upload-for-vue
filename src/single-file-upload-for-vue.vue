@@ -17,7 +17,8 @@
                 <p>
                     <a target="_blank" :href="uploaded_file.url">{{ uploaded_file.name }}</a>
                 </p>
-                <p>{{ !error ? uploaded_file.size + 'B' : error}}</p>
+                <p>{{ currentFileSize }}</p>
+
                 <p>
                     <svg xmlns="http://www.w3.org/2000/svg"
                          viewBox="0 0 20 20"
@@ -37,7 +38,25 @@
 export default {
     name: 'single-file-upload-for-vue',
 
-    props: ['name', 'headers', 'store_url', 'destroy_url', 'loaded'],
+    props: {
+        name: {
+            type: String,
+            default: 'file_input',
+        },
+
+        store_url: {
+            type: String,
+            default: '/store-url',
+        },
+
+        destroy_url: {
+            type: String,
+            default: '/destroy-url',
+        },
+
+        headers: Object,
+        loaded: Object,
+    },
 
     data()
     {
@@ -60,6 +79,23 @@ export default {
             if (this.error && !this.uploaded_file.name) return this.error // file not uploaded, error
             if (this.uploaded_file.name) return '' // we have a file
             return this.message // default message
+        },
+
+        currentFileSize()
+        {
+            if (this.error) return this.error;
+
+            let bytes = this.uploaded_file.size
+
+            // output formatted file size
+            if (bytes === 0) return '0 B'
+            const decimals = 2
+            const k = 1024
+            let dm = decimals < 0 ? 0 : decimals;
+            const sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+            let i = Math.floor(Math.log(bytes) / Math.log(k));
+
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
         }
     },
 
@@ -81,7 +117,7 @@ export default {
             let form_data = new FormData()
 
             this.error = ''; // reset the error
-            form_data.append(this.name ?? 'file_input', files[0])
+            form_data.append(this.name, files[0])
 
             this.message = 'uploading...'
 

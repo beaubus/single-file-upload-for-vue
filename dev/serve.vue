@@ -19,11 +19,12 @@ export default Vue.extend({
 
 <template>
   <div id="app">
-    <single-file-upload-for-vue :headers="{'Accept': 'application/json'}"
-                                :loaded="{url: 'https://urlofthetestfileserver.dev/gOm8aODn5RdBwktjqKU280K7JNuyK8mMB8iq8ieb.pdf', size: 56}"
-                                store_url="/backend_store_url"
-                                destroy_url="/backend_destroy_url"
-                                @complete="uploadComplete"
+    <single-file-upload-for-vue
+        :headers="{'Accept': 'application/json'}"
+        :loaded="{url: 'https://urlofthetestfileserver.dev/gOm8aODn5RdBwktjqKU280K7JNuyK8mMB8iq8ieb.pdf', size: 56}"
+        store_url="/backend_store_url"
+        destroy_url="/backend_destroy_url"
+        @complete="uploadComplete"
     ></single-file-upload-for-vue>
   </div>
 </template>
