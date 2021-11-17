@@ -58,6 +58,11 @@ Wrap component with `<div>` as it takes all the space:
 
 On the server side you shoud handle POST and DELETE requests. DELETE url would have file name at the end.
 
+| Request            | Return                 
+| ---                | ---                     
+| POST               |  `{url: 'full-url', size: 0}`   
+| DELETE             |  `{result: true}`
+
 #### Laravel example:
 ```php
 // routes/web.php
