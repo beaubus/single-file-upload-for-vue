@@ -56,7 +56,38 @@ Wrap component with `<div>` as it takes all the space:
 
 ### Backend
 
-On the server side you shoud handle POST and DELETE requests.
+On the server side you shoud handle POST and DELETE requests. DELETE url would have file name at the end.
+
+#### Laravel example:
+```php
+// routes/web.php
+
+Route::post('/upload', 'PrintableInvoicesController@uploadCustomInvoice');
+Route::delete('/destroy/{url}', 'PrintableInvoicesController@destroyCustomInvoice'); 
+
+
+
+// PrintableInvoicesController.php
+
+public function uploadCustomInvoice(Request $request): array
+{
+    $path = $request->custom_invoice_file->store('folder');
+    $url = asset('storage/' . $path);
+
+    return [
+        'url' => $url,
+        'size' => \Storage::size($path),
+    ];
+}
+
+
+public function destroyCustomInvoice(string $file_name): array
+{
+    return [
+        'result' => \Storage::delete('folder/' . $file_name)
+    ];
+}
+```
 
 
 ## Styling
