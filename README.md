@@ -53,6 +53,12 @@ Wrap component with `<div>` as it takes all the space:
     ></single-file-upload-for-vue>
 </div>
 ```
+
+### Backend
+
+On the server side you shoud handle POST and DELETE requests.
+
+
 ## Styling
 
 ![](demo/styling.png)
