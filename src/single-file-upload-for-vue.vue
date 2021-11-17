@@ -37,7 +37,7 @@
 export default {
     name: 'single-file-upload-for-vue',
 
-    props: ['name', 'headers', 'store_url', 'destroy_url', 'loaded', 'width', 'height'],
+    props: ['name', 'headers', 'store_url', 'destroy_url', 'loaded'],
 
     data()
     {
@@ -81,7 +81,7 @@ export default {
             let form_data = new FormData()
 
             this.error = ''; // reset the error
-            form_data.append(this.name, files[0])
+            form_data.append(this.name ?? 'file_input', files[0])
 
             this.message = 'uploading...'
 

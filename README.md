@@ -66,3 +66,41 @@ div > .single-file-upload-for-vue {
     border-radius: 20%;
 }
 ```
+
+## Properties
+
+| Name         | Type    | Default     | Description                                        
+| ---          | ---     | ---         | ---                                                
+| name         | String  | 'file_input'| Name of the file input
+| store_url    | String  |             | url for the POST request                                
+| destroy_url  | String  |             | url for the DELETE request (file name would be appended to the end)
+| headers      | Object  |             | Request headers
+| loaded       | Object  |             | Absolute link to the loaded file (url) and size in bytes (size) 
+
+
+## Emits
+| Name               | Description              | Payload
+| ---                | ---                      | --- 
+| complete           | Upload complete event    | Absolute link to the uploaded file and size in bytes: {url: 'link', size: 7}
+
+
+## License
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
