@@ -17,7 +17,7 @@
 
 Modern upload input with Drag'n'Drop support, based on the Fetch Api (POST and DELETE methods). As simple and lightweight as possible.
 
-![](demo.gif)
+![](demo/demo.gif)
 
 ## Installation
 
@@ -42,13 +42,27 @@ components: {
 
 Wrap component with `<div>` as it takes all the space:
 ```html
-<div style="width:120px;height:120px">
-    <single-file-upload-for-vue 
-        :headers="{'Accept': 'application/json'}"
-        :loaded="{url: 'https://full-url-to-your-file.pdf', size: 56}"
+<div style="width: 120px; height: 120px">
+    <single-file-upload-for-vue
+        name="name_of_the_file_input"
         store_url="/url-to-backend-store"
         destroy_url="/url-to-backend-destroy"
+        :headers="{'Accept': 'application/json'}"
+        :loaded="{url: 'https://full-url-to-your-file.pdf', size: 56}"
         @complete="uploadComplete"
     ></single-file-upload-for-vue>
 </div>
+```
+## Styling
+
+![](demo/styling.png)
+
+Increase specificity and style it as you need:
+```css
+div > .single-file-upload-for-vue {
+    font-size: .75em;
+    border: 2px dashed #dc5f00;
+    background: #ffe484;
+    border-radius: 20%;
+}
 ```
