@@ -7,6 +7,7 @@
          @click="triggerFileSelect"
     >
         <input type="file"
+               :accept="accept"
                @change="uploadTemporaryFile"
                ref="file-input"
         >
@@ -56,6 +57,7 @@ export default {
 
         headers: Object,
         loaded: Object,
+        accept: String,
     },
 
     data()
@@ -102,6 +104,30 @@ export default {
     methods: {
         dropFile(event)
         {
+            if (!event.dataTransfer.files || !event.dataTransfer.files[0]) return
+
+            if (this.accept) { // validate dropped file
+                let array_of_accepted_files = this.accept.split(',')
+                let file_name = event.dataTransfer.files[0].name || ''
+                let mime_type = (event.dataTransfer.files[0].type || '').toLowerCase()
+                let base_mime_type = mime_type.replace(/\/.*$/, '')
+
+                let is_valid = array_of_accepted_files.some(type => {
+                    let valid_type = type.trim().toLowerCase()
+
+                    if (valid_type.charAt(0) === '.') return file_name.toLowerCase().endsWith(valid_type)
+                    if (valid_type.endsWith('/*')) return base_mime_type === valid_type.replace(/\/.*$/, '')
+
+                    return mime_type === valid_type
+                })
+
+                if (!is_valid){
+                    this.error = 'File type is not valid'
+                    this.is_dragging = false
+                    return
+                }
+            }
+
             this.$refs['file-input'].files = event.dataTransfer.files
 
             this.uploadTemporaryFile()
@@ -116,7 +142,10 @@ export default {
             let files = this.$refs['file-input'].files
             let form_data = new FormData()
 
-            this.error = ''; // reset the error
+            if (!files[0]) return
+
+            this.is_dragging = false // dragging is finished
+            this.error = '' // reset the error
             form_data.append(this.name, files[0])
 
             this.message = 'uploading...'

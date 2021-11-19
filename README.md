@@ -116,6 +116,7 @@ div > .single-file-upload-for-vue {
 | destroy_url  | String  | '/destroy-url' | url for the DELETE request (file name would be appended to the end)
 | headers      | Object  |                | Request headers
 | loaded       | Object  |                | Absolute link to the loaded file (url) and size in bytes (size) 
+| accept       | String  |                | A comma-separated list of one or more file types, or unique file type specifiers, describing which file types to allow
 
 
 ## Emits

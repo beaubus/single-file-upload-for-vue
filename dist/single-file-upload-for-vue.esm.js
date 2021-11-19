@@ -51,7 +51,8 @@ var script = {
       default: '/destroy-url'
     },
     headers: Object,
-    loaded: Object
+    loaded: Object,
+    accept: String
   },
 
   data() {
@@ -93,6 +94,28 @@ var script = {
   },
   methods: {
     dropFile(event) {
+      if (!event.dataTransfer.files || !event.dataTransfer.files[0]) return;
+
+      if (this.accept) {
+        // validate dropped file
+        let array_of_accepted_files = this.accept.split(',');
+        let file_name = event.dataTransfer.files[0].name || '';
+        let mime_type = (event.dataTransfer.files[0].type || '').toLowerCase();
+        let base_mime_type = mime_type.replace(/\/.*$/, '');
+        let is_valid = array_of_accepted_files.some(type => {
+          let valid_type = type.trim().toLowerCase();
+          if (valid_type.charAt(0) === '.') return file_name.toLowerCase().endsWith(valid_type);
+          if (valid_type.endsWith('/*')) return base_mime_type === valid_type.replace(/\/.*$/, '');
+          return mime_type === valid_type;
+        });
+
+        if (!is_valid) {
+          this.error = 'File type is not valid';
+          this.is_dragging = false;
+          return;
+        }
+      }
+
       this.$refs['file-input'].files = event.dataTransfer.files;
       this.uploadTemporaryFile();
     },
@@ -104,6 +127,9 @@ var script = {
     uploadTemporaryFile() {
       let files = this.$refs['file-input'].files;
       let form_data = new FormData();
+      if (!files[0]) return;
+      this.is_dragging = false; // dragging is finished
+
       this.error = ''; // reset the error
 
       form_data.append(this.name, files[0]);
@@ -342,7 +368,7 @@ var __vue_render__ = function () {
     ref: "file-input",
     attrs: {
       "type": "file",
-      "accept": "application/pdf"
+      "accept": _vm.accept
     },
     on: {
       "change": _vm.uploadTemporaryFile
@@ -381,7 +407,7 @@ var __vue_staticRenderFns__ = [];
 
 const __vue_inject_styles__ = function (inject) {
   if (!inject) return;
-  inject("data-v-0d461d27_0", {
+  inject("data-v-0c75a680_0", {
     source: ".single-file-upload-for-vue{width:100%;height:100%;font-size:.75em;border:2px dashed #d3d3d3;background:#f1f1f1;display:flex;align-items:center;justify-content:center;cursor:pointer;text-align:center;overflow:scroll}.single-file-upload-for-vue.dragging{filter:brightness(.9)}.single-file-upload-for-vue>input{display:none}.single-file-upload-for-vue>div{max-width:100%;padding:1rem}.single-file-upload-for-vue .file{overflow:hidden}.single-file-upload-for-vue .file>p:nth-of-type(1){overflow:hidden;text-overflow:ellipsis;direction:rtl;text-align:left}.single-file-upload-for-vue .file>p:nth-of-type(1)>a{white-space:nowrap}.single-file-upload-for-vue .file>p:nth-of-type(3){text-align:center;padding-top:.5rem;margin-bottom:0;line-height:1}.single-file-upload-for-vue .file>p:nth-of-type(3)>svg{fill:red;height:1rem;width:1rem;cursor:pointer}.single-file-upload-for-vue.failed{border:2px dashed #d50000;background:#ffecec}",
     map: undefined,
     media: undefined
