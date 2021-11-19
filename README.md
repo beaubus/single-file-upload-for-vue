@@ -68,8 +68,7 @@ On the server side you shoud handle POST and DELETE requests. DELETE url would h
 // routes/web.php
 
 Route::post('/upload', 'PrintableInvoicesController@uploadCustomInvoice');
-Route::delete('/destroy/{url}', 'PrintableInvoicesController@destroyCustomInvoice'); 
-
+Route::delete('/destroy/{file_name}', 'PrintableInvoicesController@destroyCustomInvoice'); // destroy custom invoice
 
 
 // PrintableInvoicesController.php
