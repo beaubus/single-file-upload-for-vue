@@ -1,3 +1,4 @@
+<!-- Not working right now, figuring out a way to make component work for both vue2 and vue3  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,8 +30,7 @@
 </div>
 
 <script>
-    var app = new Vue({
-        el: '#app',
+    var app = Vue.createApp({
         components: {
             'single-file-upload-for-vue': SingleFileUploadForVue
         },
@@ -40,7 +40,7 @@
                 console.log(data)
             }
         }
-    })
+    }).mount('#app')
 </script>
 
 </body>

@@ -1,6 +1,6 @@
 {
     "name": "@beaubus/single-file-upload-for-vue",
-    "version": "0.1.3",
+    "version": "0.1.5",
     "description": "Modern upload input with Drag'n'Drop support, based on the Fetch Api (POST and DELETE methods). As simple and lightweight as possible.",
     "main": "dist/single-file-upload-for-vue.ssr.js",
     "browser": "dist/single-file-upload-for-vue.esm.js",
@@ -54,7 +54,7 @@
         "vue-template-compiler": "^2.6.14"
     },
     "peerDependencies": {
-        "vue": ">=2.6.14"
+        "vue": "^2.6.14"
     },
     "engines": {
         "node": ">=12"
