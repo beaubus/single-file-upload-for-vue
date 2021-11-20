@@ -413,8 +413,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-0c75a680_0", {
-    source: ".single-file-upload-for-vue{width:100%;height:100%;font-size:.75em;border:2px dashed #d3d3d3;background:#f1f1f1;display:flex;align-items:center;justify-content:center;cursor:pointer;text-align:center;overflow:scroll}.single-file-upload-for-vue.dragging{filter:brightness(.9)}.single-file-upload-for-vue>input{display:none}.single-file-upload-for-vue>div{max-width:100%;padding:1rem}.single-file-upload-for-vue .file{overflow:hidden}.single-file-upload-for-vue .file>p:nth-of-type(1){overflow:hidden;text-overflow:ellipsis;direction:rtl;text-align:left}.single-file-upload-for-vue .file>p:nth-of-type(1)>a{white-space:nowrap}.single-file-upload-for-vue .file>p:nth-of-type(3){text-align:center;padding-top:.5rem;margin-bottom:0;line-height:1}.single-file-upload-for-vue .file>p:nth-of-type(3)>svg{fill:red;height:1rem;width:1rem;cursor:pointer}.single-file-upload-for-vue.failed{border:2px dashed #d50000;background:#ffecec}",
+  inject("data-v-61fff5d9_0", {
+    source: ".single-file-upload-for-vue{width:100%;height:100%;font-size:.75em;border:2px dashed #d3d3d3;background:#f1f1f1;display:flex;align-items:center;justify-content:center;cursor:pointer;text-align:center;overflow:scroll}.single-file-upload-for-vue.dragging{filter:brightness(.9)}.single-file-upload-for-vue>input{display:none}.single-file-upload-for-vue>div{max-width:100%;padding:1rem}.single-file-upload-for-vue .file{overflow:hidden}.single-file-upload-for-vue .file>p:nth-of-type(1){overflow:hidden;text-overflow:ellipsis;direction:rtl;text-align:left}.single-file-upload-for-vue .file>p:nth-of-type(1)>a{white-space:nowrap}.single-file-upload-for-vue .file>p:nth-of-type(3){display:flex;justify-content:center;padding-top:.5rem;margin-bottom:0;line-height:1}.single-file-upload-for-vue .file>p:nth-of-type(3)>svg{fill:red;height:1rem;width:1rem;cursor:pointer}.single-file-upload-for-vue.failed{border:2px dashed #d50000;background:#ffecec}",
     map: undefined,
     media: undefined
   });
@@ -425,7 +425,7 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 var __vue_scope_id__ = undefined;
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-0c75a680";
+var __vue_module_identifier__ = "data-v-61fff5d9";
 /* functional template */
 
 var __vue_is_functional_template__ = false;

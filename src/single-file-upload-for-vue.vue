@@ -269,7 +269,8 @@ export default {
     }
 
     .single-file-upload-for-vue .file >p:nth-of-type(3) {
-        text-align: center;
+        display: flex;
+        justify-content: center;
         padding-top: .5rem;
         margin-bottom: 0;
         line-height: 1;
