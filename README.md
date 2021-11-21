@@ -1,4 +1,4 @@
-# Simple single file upload with Drag'n'Drop for Vue2
+# Simple single file upload with Drag'n'Drop for Vue2 and Vue3
 
 <a href="https://www.npmjs.com/package/@beaubus/single-file-upload-for-vue">
     <img src="https://img.shields.io/npm/dt/@beaubus/single-file-upload-for-vue?logo=npm" alt="npm downnloads count">
@@ -15,7 +15,7 @@
 <br>
 <br>
 
-Modern upload input with Drag'n'Drop support, based on the Fetch Api (POST and DELETE methods). As simple and lightweight as possible.
+Universal (Vue2 & Vue3) modern upload input with Drag'n'Drop support, based on the Fetch Api (POST and DELETE methods). As simple and lightweight as possible.
 
 ![](demo/demo.gif)
 
@@ -28,7 +28,7 @@ npm i @beaubus/single-file-upload-for-vue
 
 CDN
 ```bash
-<script src="https://unpkg.com/@beaubus/single-file-upload-for-vue/dist/single-file-upload-for-vue.min.js"></script>
+<script src="https://unpkg.com/@beaubus/single-file-upload-for-vue/dist/min.js"></script>
 ```
 
 ## Usage
