@@ -1,6 +1,6 @@
 {
     "name": "@beaubus/single-file-upload-for-vue",
-    "version": "0.1.8",
+    "version": "0.1.9",
     "description": "Modern upload input with Drag'n'Drop support, based on the Fetch Api (POST and DELETE methods). As simple and lightweight as possible.",
     "main": "dist/single-file-upload-for-vue.ssr.js",
     "browser": "dist/single-file-upload-for-vue.esm.js",
@@ -14,7 +14,7 @@
     "scripts": {
         "serve": "vue-cli-service serve dev/serve.js",
         "prebuild": "rimraf ./dist",
-        "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
+        "build": "npm run build-vue2 && npm run build-vue3 && php ./build/build.php",
         "build-vue2": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
         "build-vue3": "cross-env NODE_ENV=production rollup --config build/rollup.config_vue3.js",
         "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
