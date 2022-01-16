@@ -82,7 +82,7 @@ function _nonIterableRest() {
         url: '',
         size: 0
       },
-      default_message: 'Drop files in here or click to upload',
+      default_message: 'Drop file in here or click to upload',
       message: '',
       error: ''
     };

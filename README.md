@@ -19,6 +19,8 @@ Universal (Vue2 & Vue3) modern upload input with Drag'n'Drop support, based on t
 
 ![](demo/demo.gif)
 
+<a target="_blank" href="https://www.beaubus.com/packages/#single-file-upload-for-vue">Demo</a>
+
 ## Installation
 
 NPM
