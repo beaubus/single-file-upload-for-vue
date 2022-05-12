@@ -15,7 +15,7 @@
 <br>
 <br>
 
-Universal (Vue2 & Vue3) modern upload input with Drag'n'Drop support, based on the Fetch Api (POST and DELETE methods). As simple and lightweight as possible.
+Universal (Vue2 & Vue3) modern upload input with Drag'n'Drop support, based on the Fetch Api (POST and DELETE methods). Simple and lightweight.
 
 ![](demo/demo.gif)
 
