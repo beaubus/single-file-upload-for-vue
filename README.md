@@ -58,7 +58,7 @@ Wrap component with `<div>` as it takes all the space:
 
 ### Backend
 
-On the server side you shoud handle POST and DELETE requests. DELETE url would have file name at the end.
+On the server side, you should handle POST and DELETE requests. DELETE url would have the file name at the end.
 
 | Request            | Return                 
 | ---                | ---                     
