@@ -15,7 +15,7 @@
 <br>
 <br>
 
-Universal (Vue2 & Vue3) modern upload input with Drag'n'Drop support, based on the Fetch Api (POST and DELETE methods). Simple and lightweight.
+A universal, modern upload input package that supports both Vue2 and Vue3. It features Drag'n'Drop functionality and is based on the Fetch API, supporting both POST and DELETE methods. This package is simple, lightweight, and easy to use.
 
 ![](demo/demo.gif)
 
