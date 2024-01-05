@@ -19,6 +19,8 @@ A universal, modern upload input package that supports both Vue2 and Vue3. It fe
 
 ![](demo/demo.gif)
 
+<br>
+
 <a target="_blank" href="https://www.beaubus.com/packages/#single-file-upload-for-vue">Demo</a>
 
 ## Installation
